@@ -1,0 +1,22 @@
+<div style="border:2px solid red;">
+<% if @user.errors.present? %>
+        <span style="color:red;">Errors in the form</span> <br/>
+<% end %>
+<% @user.errors.full_messages.each do |message| %>
+        <%= message %> <br/>
+<% end %>
+</div>
+
+<%= form_for @user do |f| %>
+	<%= f.label :email %> <br/>
+	<%= f.text_field :email %> <br/>
+	<br/><br/>
+	<%= f.label :password %> <br/>
+	<%= f.password_field :password %> <br/>
+	<br/> <br/>
+	<%= f.label :password_confirmation %> <br/>
+	<%= f.password_field :password_confirmation %> <br/>
+	<br/> <br/>
+	<%= f.submit %>
+<% end %>
+

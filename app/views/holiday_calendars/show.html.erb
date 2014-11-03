@@ -1,0 +1,9 @@
+<p> <%= flash[:notice] %> </p> <br/><br/>
+
+<b><%= @holiday_calendar.holiday_reason %> </b>
+<br/>
+<b><%= @holiday_calendar.holiday_date %> </b>
+<br/>
+
+<%= link_to "Back to holidays", holiday_calendars_path %> | <%= link_to "Edit", edit_holiday_calendar_path(@holiday_calendar) %> | <%= link_to "Delete", holiday_calendar_path(@holiday_calendar), :method =>"DELETE" %>
+

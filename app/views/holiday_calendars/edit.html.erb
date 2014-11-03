@@ -1,0 +1,5 @@
+<b> Holiday Edit Form </b>
+
+<%= render 'form' %>
+
+<%= link_to "Back to holidays", holiday_calendars_path%> | <%= link_to "Show", holiday_calendar_path(@holiday_calendar)%> | <%= link_to "Delete", holiday_calendar_path(@holiday_calendar), :method => "DELETE" %>

@@ -1,0 +1,20 @@
+<h1>Schedules</h1>
+<p> <%= flash[:notice] %> </p><br/>
+<div style="float:right;"><%= link_to "Create New Schedule", new_shift_path %>
+</div>
+
+<b> All Shifts </b>
+<% @shifts.each do |shift| %>
+	<div style="margin:5px;border-bottom:2px solid red;">
+	<%= shift.name %><br/>
+	<%= shift.shift_date%> <br/>
+	<%=  shift.created_at%> <br/>
+	 User Id is <%= shift.user_id%>
+  <br/><br/>	 <%= shift.user.email %>
+	<br/>
+
+
+	
+<%= link_to "Edit", edit_shift_path(shift) %> | <%= link_to "Show", shift_path(shift) %> | <%= link_to "Delete", shift_path(shift), :method => "DELETE" %>
+	</div>
+<% end %>

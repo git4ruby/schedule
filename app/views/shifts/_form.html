@@ -1,0 +1,23 @@
+<br/><br/>
+
+<div style="border:2px solid red;">
+<% if @shift.errors.present? %>
+        <span style="color:red;">Errors in the form</span> <br/>
+<% end %>
+<% @shift.errors.full_messages.each do |message| %>
+        <%= message %> <br/>
+<% end %>
+</div>
+<br/>
+
+<%= form_for @shift do |f| %>
+        
+	<%= f.hidden_field :user_id %> <br/>
+        <br/><br/>
+        <%= f.label :shift_date %> <br/>
+	<%= f.date_select :shift_date %> <br/>
+	<br/><br/>
+
+        <%= f.submit %>
+<% end %>
+

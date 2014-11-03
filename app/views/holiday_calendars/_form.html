@@ -1,0 +1,20 @@
+<div style="border:2px solid red;">
+<% if @holiday_calendar.errors.present? %>
+        <span style="color:red;">Errors in the form</span> <br/>
+<% end %>
+<% @holiday_calendar.errors.full_messages.each do |message| %>
+        <%= message %> <br/>
+<% end %>
+</div>
+
+
+<%= form_for @holiday_calendar do |f| %>
+        <%= f.label :holiday_reason %> <br/>
+        <%= f.text_field :holiday_reason %>
+        <br/><br/>
+        <%= f.label :holiday_date %> <br/>
+	<%= f.date_select :holiday_date %> <br/>
+	<br/><br/>
+        <%= f.submit %>
+<% end %>
+
